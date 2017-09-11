@@ -17,7 +17,6 @@ var assert = {
     //   throw new Error("Message not stored in text property");
     // }
   };
-
   testNoteObject();
 })(this);
 
@@ -26,13 +25,10 @@ var assert = {
   function testNoteListObject() {
     var noteList = new NoteList();
     var note1 = { text: "Favourite drink: seltzer"}
-
     noteList.add(note1);
     assert.isTrue(noteList.list[0].text === "Favourite drink: seltzer");
-
     assert.isTrue(noteList.readList()[0].text === "Favourite drink: seltzer");
   };
-
   testNoteListObject();
 })(this);
 
@@ -41,11 +37,7 @@ var assert = {
   function testNoteListViewObject() {
     var noteList = { list:  [{text: "Favourite food: pesto"}, {text: "Favourite drink: seltzer"}]};
     var noteListView = new NoteListView(noteList);
-
-
     assert.isTrue(noteListView.view() === "<ul><li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li></ul>");
-
   };
-
   testNoteListViewObject();
 })(this);
