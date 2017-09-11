@@ -35,3 +35,17 @@ var assert = {
 
   testNoteListObject();
 })(this);
+
+
+(function(exports) {
+  function testNoteListViewObject() {
+    var noteList = { list:  [{text: "Favourite food: pesto"}, {text: "Favourite drink: seltzer"}]};
+    var noteListView = new NoteListView(noteList);
+
+
+    assert.isTrue(noteListView.view() === "<ul><li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li></ul>");
+
+  };
+
+  testNoteListViewObject();
+})(this);
