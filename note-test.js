@@ -2,7 +2,7 @@
 var assert = {
   isTrue: function(assertionToCheck) {
     if (!assertionToCheck) {
-      throw new Error("Assertion failed: " + assertionToCheck + " is not truthy");
+      console.log("Assertion failed: " + assertionToCheck + " is not truthy");
     };
   }
 };
@@ -39,7 +39,7 @@ var assert = {
   function testNoteListViewObject() {
     var noteList = { list:  [{text: "Favourite food: pesto"}, {text: "Favourite drink: seltzer"}]};
     var noteListView = new NoteListView(noteList);
-  pass = noteListView.view() === "<ul><li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li></ul>";
+  pass = noteListView.view() === "<ul><li><div>Favourite food: pest</div></li><li><div>Favourite drink: sel</div></li></ul>";
   assert.isTrue(pass);
   formatOutput('testNoteListViewObject', pass)
   };
@@ -64,7 +64,7 @@ var assert = {
     var noteList = new NoteList()
     var noteController = new Controller(noteList);
     noteController.showNoteListView(documentDouble)
-    pass = documentDouble.getElementById("app").innerHTML === "<ul><li><div>Favourite drink: seltzer</div></li></ul>";
+    pass = documentDouble.getElementById("app").innerHTML === "<ul><li><div>Favourite drink: sel</div></li></ul>";
     assert.isTrue(pass);
     formatOutput('testNoteController', pass)
     // noteController.showNoteListView();                             <ul><li><div>Favourite drink: seltzer.</div></li></ul

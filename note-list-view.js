@@ -8,7 +8,7 @@
     var stringpart = "";
     this.noteList.list.forEach(function(note){
       // var stringpart = "";
-      stringpart+=("<li><div>" + note.text + "</div></li>");
+      stringpart+=("<li><div>" + note.text.slice(0,20) + "</div></li>");
       // console.log(note);
       // console.log(note.text);
   });
