@@ -44,8 +44,14 @@ var assert = {
 
 (function(exports) {
   function testNoteController() {
-    var noteController = new NoteController(noteList);
-    assert.isTrue(noteController.noteListView.listObject.notes === );
+    // var noteList = new NoteList();
+    var noteList = {};
+    var noteController = new Controller(noteList);
+    console.log(noteController.printElement());
+    assert.isTrue( noteController.printElement() === '<div id="app"></div>');
+    // noteController.showNoteListView();
+    // console.log(noteController.printElement());
+    // assert.isTrue( noteController.printElement() === "<ul><li><div>Favourite drink: seltzer</div></li></ul>");
   };
   testNoteController();
 })(this);

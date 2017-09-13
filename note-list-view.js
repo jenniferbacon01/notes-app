@@ -9,7 +9,10 @@
     this.noteList.list.forEach(function(note){
       // var stringpart = "";
       stringpart+=("<li><div>" + note.text + "</div></li>");
+      // console.log(note);
+      // console.log(note.text);
   });
+    // console.log("<ul>" + stringpart + "</ul>");
     return ("<ul>" + stringpart + "</ul>");
   };
   exports.NoteListView = NoteListView;
@@ -17,11 +20,11 @@
 //
 // note1 = new Note("hi");
 // note2 = new Note("ok");
-notelist = new NoteList();
-// notelist.add(note1);
-// notelist.add(note2);
-notelistview = new NoteListView(notelist);
-notelistview.view()
+// notelist = new NoteList();
+// // notelist.add(note1);
+// // notelist.add(note2);
+// notelistview = new NoteListView(notelist);
+// notelistview.view()
 
 // "<ul>
 // <li><div>

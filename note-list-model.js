@@ -1,7 +1,7 @@
 // var Note = require("./note-model").Note;
 
 (function(exports) {
-  function NoteList(message) {
+  function NoteList() {
     this.list = [];
   };
   NoteList.prototype.add = function(note) {
