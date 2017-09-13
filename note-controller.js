@@ -2,12 +2,14 @@
 (function(exports) {
   function Controller(noteList){
     this.noteList = noteList;
-    this.noteList.add(new Note("Favourite drink: seltzer."));
+    this.noteList.add(new Note("Favourite drink: seltzer"));
     this.noteListView = new NoteListView(this.noteList);
   };
 
-  Controller.prototype.showNoteListView = function() {
-    document.getElementById('app').innerHTML = this.noteListView.view();
+  Controller.prototype.showNoteListView = function(doc = document) {
+    console.log(doc)
+    console.log(doc.getElementById('app'))
+    doc.getElementById('app').innerHTML = this.noteListView.view();
   };
 
 

@@ -28,6 +28,7 @@ var assert = {
     noteList.add(note1);
     assert.isTrue(noteList.list[0].text === "Favourite drink: seltzer");
     assert.isTrue(noteList.readList()[0].text === "Favourite drink: seltzer");
+
   };
   testNoteListObject();
 })(this);
@@ -37,19 +38,41 @@ var assert = {
   function testNoteListViewObject() {
     var noteList = { list:  [{text: "Favourite food: pesto"}, {text: "Favourite drink: seltzer"}]};
     var noteListView = new NoteListView(noteList);
-    assert.isTrue(noteListView.view() === "<ul><li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li></ul>");
+  pass = noteListView.view() === "<ul><li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li></ul>";
+  assert.isTrue(pass);
+  formatOutput('testNoteListViewObject', pass)
   };
   testNoteListViewObject();
 })(this);
 
 (function(exports) {
   function testNoteController() {
-    // var noteList = new NoteList();
-    var noteList = {};
+
+    function DocumentDouble() {
+      this.tags = {};
+    }
+
+    function Tag(){
+      this.innerHTML = ""
+    }
+
+    DocumentDouble.prototype.getElementById = function (id) {
+      if (!(id in this.tags)) {
+        this.tags[id] = new Tag();
+      };
+      return this.tags[id];
+    };
+    var documentDouble = new DocumentDouble()
+    var noteList = new NoteList()
     var noteController = new Controller(noteList);
-    console.log(noteController.printElement());
-    assert.isTrue( noteController.printElement() === '<div id="app"></div>');
-    // noteController.showNoteListView();
+
+
+    noteController.showNoteListView(documentDouble)
+
+    // console.log(noteController.showNoteListView())
+
+    assert.isTrue(documentDouble.getElementById("app").innerHTML === "<ul><li><div>Favourite drink: seltzer</div></li></ul>");
+    // noteController.showNoteListView();                             <ul><li><div>Favourite drink: seltzer.</div></li></ul
     // console.log(noteController.printElement());
     // assert.isTrue( noteController.printElement() === "<ul><li><div>Favourite drink: seltzer</div></li></ul>");
   };
