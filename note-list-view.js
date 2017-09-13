@@ -9,9 +9,7 @@
     this.noteList.list.forEach(function(note){
       // var stringpart = "";
       stringpart+=("<li><div>" + note.text + "</div></li>");
-    console.log("inside forEach: " + stringpart)
   });
-    console.log("outside forEach: " + stringpart);
     return ("<ul>" + stringpart + "</ul>");
   };
   exports.NoteListView = NoteListView;

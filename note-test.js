@@ -41,3 +41,11 @@ var assert = {
   };
   testNoteListViewObject();
 })(this);
+
+(function(exports) {
+  function testNoteController() {
+    var noteController = new NoteController(noteList);
+    assert.isTrue(noteController.noteListView.listObject.notes === );
+  };
+  testNoteController();
+})(this);
