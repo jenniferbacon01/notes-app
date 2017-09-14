@@ -11,7 +11,7 @@ var assert = {
 
 (function(exports) {
 
-  // var n  = 0;
+  var n  = 0;
   function testNoteObjectId() {
 
     var note = new Note("message");
@@ -53,7 +53,7 @@ var assert = {
 
 (function(exports) {
   function testNoteListViewObject() {
-    var noteList = { list:  [{text: "Favourite food: pesto"}, {text: "Favourite drink: seltzer"}]};
+    var noteList = { list:  [{text: "Favourite food: pesto", id: 0}, {text: "Favourite drink: seltzer", id: 1}]};
     var noteListView = new NoteListView(noteList);
   pass = noteListView.view() === "<ul><li><div><a href='' id='0'>Favourite food: pest</a></div></li><li><div><a href='' id='1'>Favourite drink: sel</a></div></li></ul>";
   // console.log(noteListView.view());

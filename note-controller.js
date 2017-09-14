@@ -3,6 +3,7 @@
   function Controller(noteList){
     this.noteList = noteList;
     this.noteList.add(new Note("Favourite drink: seltzer"));
+    // console.log(this.noteList.list[0].id);
     this.noteListView = new NoteListView(this.noteList);
   };
 

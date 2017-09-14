@@ -8,7 +8,7 @@
     var stringpart = "";
     this.noteList.list.forEach(function(note){
 
-      stringpart+=("<li><div><a href='' id=" + note.id + ">" + note.text.slice(0,20) + "</a></div></li>");
+      stringpart+=("<li><div><a href='' id='" + note.id + "'>" + note.text.slice(0,20) + "</a></div></li>");
 
   });
     return ("<ul>" + stringpart + "</ul>");
