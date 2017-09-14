@@ -7,8 +7,6 @@
   };
 
   Controller.prototype.showNoteListView = function(doc = document) {
-    console.log(doc)
-    console.log(doc.getElementById('app'))
     doc.getElementById('app').innerHTML = this.noteListView.view();
   };
 

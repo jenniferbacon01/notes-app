@@ -17,10 +17,8 @@ var assert = {
     var note = new Note("message");
     var note2 = new Note("whatever");
     pass = note.id === 0;
-    console.log(note.id)
     assert.isTrue(pass);
     formatOutput('testNoteObjectId', pass)
-    console.log(note2.id)
     pass = note2.id === 1;
     assert.isTrue(pass);
     formatOutput('testNoteObjectId', pass)
@@ -34,7 +32,7 @@ var assert = {
     formatOutput('testNoteObject', pass)
   };
   testNoteObject();
-  
+
 })(this);
 
 
@@ -57,7 +55,8 @@ var assert = {
   function testNoteListViewObject() {
     var noteList = { list:  [{text: "Favourite food: pesto"}, {text: "Favourite drink: seltzer"}]};
     var noteListView = new NoteListView(noteList);
-  pass = noteListView.view() === "<ul><li><div>Favourite food: pest</div></li><li><div>Favourite drink: sel</div></li></ul>";
+  pass = noteListView.view() === "<ul><li><div><a href='' id='0'>Favourite food: pest</a></div></li><li><div><a href='' id='1'>Favourite drink: sel</a></div></li></ul>";
+  // console.log(noteListView.view());
   assert.isTrue(pass);
   formatOutput('testNoteListViewObject', pass)
   };
@@ -82,7 +81,8 @@ var assert = {
     var noteList = new NoteList()
     var noteController = new Controller(noteList);
     noteController.showNoteListView(documentDouble)
-    pass = documentDouble.getElementById("app").innerHTML === "<ul><li><div>Favourite drink: sel</div></li></ul>";
+    console.log(documentDouble.getElementById("app").innerHTML);
+    pass = documentDouble.getElementById("app").innerHTML === "<ul><li><div><a href='' id='0'>Favourite drink: sel</a></div></li></ul>";
     assert.isTrue(pass);
     formatOutput('testNoteController', pass)
     // noteController.showNoteListView();                             <ul><li><div>Favourite drink: seltzer.</div></li></ul
