@@ -1,8 +1,8 @@
 
 (function(exports) {
-  function Controller(noteList){
+  function Controller(noteList, note = new Note("Favourite drink: seltzer")){
     this.noteList = noteList;
-    this.noteList.add(new Note("Favourite drink: seltzer"));
+    this.noteList.add(note);
     // console.log(this.noteList.list[0].id);
     this.noteListView = new NoteListView(this.noteList);
   };

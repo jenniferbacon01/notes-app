@@ -1,9 +1,9 @@
 (function(exports) {
   var n = 0;
 
-  function Note(message) {
+  function Note(message, id = n) {
     this.text = message;
-    this.id = n;
+    this.id = id;
     n ++;
   };
 
