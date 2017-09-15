@@ -14,9 +14,9 @@
     };
     var documentDouble = new DocumentDouble()
     var note = {text:"Favourite drink: seltzer", id: 0};
-    var noteList = new NoteList()
-    // var noteList = { list: [note]}
-    var noteController = new Controller(noteList, note);
+    // var noteList = new NoteList()
+    var noteList = { list: [note]}
+    var noteController = new Controller(noteList);
     noteController.showNoteListView(documentDouble);
     pass = documentDouble.getElementById("app").innerHTML === "<ul><li><div><a href='#notes/0'>Favourite drink: sel</a></div></li></ul>";
     assert.isTrue(pass);
@@ -41,8 +41,9 @@
       };
     var documentDouble = new DocumentDouble()
     var note = {text:"Favourite drink: seltzer", id: 0};
-    var noteList = new NoteList();
-    var noteController = new Controller(noteList, note);
+    // var noteList = new NoteList();
+    var noteList = { list: [note]}
+    var noteController = new Controller(noteList);
     noteController.showSingleNoteView(documentDouble);
     pass = documentDouble.getElementById('app').innerHTML === "<div>Favourite drink: seltzer</div>";
     assert.isTrue(pass);
