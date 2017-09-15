@@ -9,11 +9,19 @@
   </head>
   <body>
     <div id='app'>Hello</div>
+    <form action="#addnote" method="post" id="text">
+      <textarea>
+      </textarea>
+      <input type="submit" value="Submit"/>
+    </form>
+
+
     <script>
       var noteList = new NoteList();
       var controller = new Controller(noteList);
       controller.showNoteListView();
       controller.makeUrlChangeShowNoteForCurrentPage();
+      controller.addNote();
     </script>
   </body>
 </html>

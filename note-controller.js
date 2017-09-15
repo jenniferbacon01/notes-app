@@ -59,6 +59,16 @@
     window.addEventListener("hashchange", a);
   };
 
+
+  Controller.prototype.addNote = function () {
+    var that = this;
+    window.addEventListener("submit", function(event){
+      event.preventDefault();
+      console.log(event);
+      console.log(event.target["0"].value)
+    });
+  }
+
   exports.Controller = Controller;
 
 })(this);
