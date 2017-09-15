@@ -1,17 +1,4 @@
 (function(exports) {
-  // function DocumentDouble() {
-  //   this.tags = {};
-  // }
-  // function Tag(){
-  //   this.innerHTML = ""
-  // }
-  // DocumentDouble.prototype.getElementById = function (id) {
-  //   if (!(id in this.tags)) {
-  //     this.tags[id] = new Tag();
-  //   };
-  //   return this.tags[id];
-  // };
-  // var documentDouble = new DocumentDouble()
   function testNoteListViewObject() {
     var noteList = { list:  [{text: "Favourite food: pesto", id: 0}, {text: "Favourite drink: seltzer", id: 1}]};
     var noteListView = new NoteListView(noteList);
