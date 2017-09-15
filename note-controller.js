@@ -52,7 +52,11 @@
   //
 
   Controller.prototype.makeUrlChangeShowNoteForCurrentPage = function(){
-    window.addEventListener("hashchange", this.showSingleNoteView);
+    var that = this;
+    var a = function() {
+      that.showSingleNoteView();
+    }
+    window.addEventListener("hashchange", a);
   };
 
   exports.Controller = Controller;
