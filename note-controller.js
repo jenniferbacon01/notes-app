@@ -40,10 +40,8 @@
   };
 
   Controller.prototype.showSingleNoteView = function(doc = document) {
-    console.log(this);
     var noteId = this._getNoteIdFromUrl(doc.location);
     var note = this._getNoteFromNoteId(noteId);
-    console.log("hi");
     var singleNoteView = new SingleNoteView(note);
     doc.getElementById('app').innerHTML = singleNoteView.createHtmlELement();
   };
@@ -60,12 +58,14 @@
   };
 
 
-  Controller.prototype.addNote = function () {
+  Controller.prototype.addNote = function (win = window, doc = document) {
     var that = this;
-    window.addEventListener("submit", function(event){
+    win.addEventListener("submit", function(event){
+      console.log(event.target["0"].value);
+      var newNote = new Note(event.target["0"].value);
+      that.noteList.add(newNote);
+      that.showNoteListView();
       event.preventDefault();
-      console.log(event);
-      console.log(event.target["0"].value)
     });
   }
 
